@@ -1,50 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" href="style.css">
+   
     <title>Alexandra's Banging Portfolio</title>
+   
     <script src="portfolio.js" defer></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=VT323&family=Victor+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
     <nav>
-        <img src="#" class="logo" alt="Alexandra Demetriades Portfolio logo and home button">
+       <div class="logo-home">
+            <a class="logo-name" href="index.html" alt="Home and logo">
+            Alexandra 
+            <br> 
+            Demetriades
+            </a>
+        </div>
+        
         <div class="menu">
-            <a href="#" alt="selected Work">Selected Work</a>
-            <a href="#" alt="about">About</a>
-            <a href="#" alt="contact">Contact</a>
+            <a href="#selectedWork" alt="my projects">Projects</a>
+
+            <a href="#about" alt="information">Info</a>
         </div>
     </nav>
     
-    <div class="selectedWork" alt="selected works">
+    <div class="intro" alt="intro">
+        <h1>“Debugging” is like being the detective in a crime drama where you are also the murderer."</h1>
+        <br>
+        <h5>- Not my quote</h5>
     </div>
 
-    <div class="about" alt="About me Section">
+    <div class="selectedWork" id="selectedWork" alt="selected works">
+    </div>
+
+    <div class="about" id="about" alt="About me Section">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo voluptatum vel molestias dolorum fugiat aperiam temporibus culpa possimus nobis a, veniam dicta, voluptatem eaque cupiditate iste exercitationem quos ab! Voluptatum?</p>
-        <img src="#" alt="Image of designer">
+        <img class="aboutMeImg" src="WhatsApp Image 2023-07-05 at 15.38.22.jpeg" alt="Image of designer or something">
     </div>
     
     <form class="contact" alt="contact me">
+        
         <h3 class="contactTitle">Get in touch</h3>
 
+        <div class="fullName">
         <label for="fullName" alt="Full Name">Full Name</label>
-        <input type="text" alt="full name input field" required placeholder="What's yo name"/>
+        <input type="text" id="fullName" alt="full name input field" required placeholder="What's yo name"/>
+        </div>
 
-        <label for="email" alt="email">Email</label>
-        <input type="email" alt="email input field" required placeholder="getintouch@mystudio.com"/>
-    
-
+        <div class="email">
+        <label for="email" alt="email"§>Email</label>
+        <input type="email" id="email" alt="email input field" required placeholder="getintouch@mystudio.com"/>
+        </div>
+   
+        <div class="enquiry">
         <label for="enquiry" alt="enquiry">Please describe your enquiry</label>
-        <textarea type="text" alt="enquiry input field" placeholder="I would like to speak about Orcas, our new overloards."></textarea>
-        <input type="submit"/>
+        <textarea type="text" id="enquiry" alt="enquiry input field" placeholder="I would like to speak about Orcas, our new overloards."></textarea>
+        <br>
+        <input class="submit" type="submit"/>
+        </div>  
         
     </form>
 
+   
+
+    <footer class="footer">
+
+        <a href="go-to-top"></a><i class="fa-light fa-hand-point-up fa-flip-horizontal"></i></a>
+   
+        It's me, Mario!
+    </footer>
 
 
 
