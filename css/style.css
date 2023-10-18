@@ -16,6 +16,10 @@ h1 {
     font-size: 2.5vw;
 }
 
+h3 {
+    font-size: 2vw;
+}
+
 
 
 nav {
@@ -23,8 +27,9 @@ nav {
     justify-content: space-between;
     position: fixed;
     padding: 3% 4%;
-
+    z-index: 1;
 }
+
 
 nav, a {
     font-weight: 500;
@@ -33,18 +38,17 @@ nav, a {
     font-size: 3.5vw;
     top: 3%;
     left: 1%;
-    right:1%;
-    
-}
-.logo-sm-inactive{
-    visibility:hidden;
-    background-color: transparent;
-    position: fixed;
-    padding: 3% 4%;
+    right:1%;    
 }
 
-.logo-sm-active{
-    display: block;
+.logo-home {
+background-color: transparent;
+}
+
+
+.logo-sm {
+    font-size: 3vw;
+    display: none;
     background-color: transparent;
     position: fixed;
     padding: 3% 4%;
@@ -52,10 +56,6 @@ nav, a {
 
 .logo-sml {
     background-color: transparent;
-}
-
-.logo-name-inactive{
-    visibility: hidden;
 }
 
 
@@ -102,6 +102,7 @@ p {
 
 .selectedWork {
     height: 100vh;
+    background-color: transparent;
 }
 
 .carousel {
@@ -117,16 +118,18 @@ p {
 .carousel_img {
     width: 100%;
     height: 100%;
-    border-radius: 1vw 1vw 0 0;
-    padding-right: 5vw;
+    border-radius: 2vw;
+    padding: 0 5vw;
     object-fit: cover;
 
 }
 
 .carousel_track-container {
     height: 100%;
+    width: 100%;
     position: relative;
     overflow: hidden;
+    background-color: transparent;
 
 }
 
@@ -136,7 +139,7 @@ p {
     padding: 0;
     margin: 0;
     list-style: none;
-    background: transparent;
+    background-color: transparent;
     transition: transform 250ms ease-in;
 }
 
@@ -145,6 +148,7 @@ p {
     top: 0;
     bottom: 0;
     width: 100%;
+    background-color: transparent;
 }
 
 .carousel_button {
@@ -155,10 +159,11 @@ p {
     transform: translateY(-50%);
     border: 0;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .carousel_button img {
-    /* color: antiquewhite; */
+    color: antiquewhite;
     background: transparent;
     filter: invert(70%);
     width: 5vw;
@@ -180,6 +185,10 @@ p {
     padding: 1.5vw 0;
     background: transparent;
 
+}
+
+.carousel.current-slide {
+    background-color: transparent;
 }
 
 .carousel_indicator {
@@ -238,3 +247,12 @@ footer {
     padding: 80px 10%;
 }
 
+@media screen and (max-width: 900px) {
+ a.logo-home {
+   visibility: hidden;
+ }
+ a.logo-sm {
+   display: block;
+   transition: 1s;
+ }
+}
