@@ -126,15 +126,18 @@ p {
 .carousel_track-container {
     height: 100%;
     position: relative;
+    overflow: hidden;
 
 }
 
 .carousel_track {
-    background-color: aquamarine;
+    position: relative;
+    height: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
     background: transparent;
+    transition: transform 250ms ease-in;
 }
 
 .carousel_slide {
@@ -171,6 +174,7 @@ p {
 }
 
 .carousel_nav {
+    background: rgb(204, 202, 206);
     display: flex;
     justify-content: center;
     padding: 1.5vw 0;

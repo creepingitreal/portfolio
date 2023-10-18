@@ -27,9 +27,24 @@ const setSlidePosition = (function(slide, index) {
 slides.forEach(setSlidePosition) //used variable function here
 
 
-// click left, move
+ // now that we've got the next slide button working, 
+    // best to create a function so we can use it for multiple things.
+
+    const moveToSlide = function(track, currentSlide, targetSlide){
+        track.style.transform = 'translateX(-' + targetSlide.style.left + ')'; //need to add style.left in directly.
+                                                                                // Because we using this for both prev and next slides, chage name to targetSlide.
+        currentSlide.classList.remove('current-slide');
+        targetSlide.classList.add('current-slide');
+    } //Back to line nextButton
 
 
+// click left, move                 //copied function from click right
+prevButton.addEventListener('click', function(){
+    const currentSlide = track.querySelector('.current-slide');
+    const prevSlide = currentSlide.previousElementSibling;  
+    
+    moveToSlide(track, currentSlide, prevSlide)
+})
 
 
 // click right, move
@@ -38,8 +53,21 @@ nextButton.addEventListener('click', function(e) {
     const nextSlide = currentSlide.nextElementSibling;  // move to next slide
     const amountToMove = nextSlide.style.left; //how far the element must move
 
-    // console.log(currentSlide) ;
-    track.style.transform = 'translateX(" + amountToMove + ")';
+    // track.style.transform = 'translateX(-' + amountToMove + ')';
+    // currentSlide.classList.remove('current-slide')
+    // nextSlide.classList.add('current-slide')
+    moveToSlide(track, currentSlide, nextSlide)
 })
-// click nav dots change to relevant slide
 
+                // see line 30
+
+
+// click nav dots change to relevant slide
+dotsNav.addEventListener('click', function(e){    //what indicator has been clicked
+    const targetDot = e.target.closest('button');
+
+    console.log(targetDot)
+
+
+
+})
