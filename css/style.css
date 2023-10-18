@@ -71,7 +71,6 @@ nav, a {
 .intro {
     height: 100vh;
     padding: 30% 10%;
-    margin: 10%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -91,7 +90,7 @@ nav, a {
 
 p {
     padding-right: 3vw;
-    font-size: 1.8vw;
+    font-size: 1.5vw;
     padding-right: 7vw;
 }
 
@@ -146,13 +145,11 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
+
 }
 
 .carousel_button img {
-    width: 12px;
+    width: 5vw;
 
 }
 .carousel_button--left {
