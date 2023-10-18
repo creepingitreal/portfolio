@@ -28,19 +28,18 @@ slides.forEach(setSlidePosition) //used variable function here
 
 
 // click left, move
-nextButton.addEventListener('click', function(e){
-    const currentSlide = track.querySelector('.current-slide');
-    const nextSlide = currentSlide.nextElementSibling;  // move to next slide
-    const amountToMove = nextSlide.style.left //how far the element must move
 
-    track.style.transform = 'translateX(- " + amountToMove + ")';
-
-})
 
 
 
 // click right, move
+nextButton.addEventListener('click', function(e) {
+    const currentSlide = track.querySelector('.current-slide');
+    const nextSlide = currentSlide.nextElementSibling;  // move to next slide
+    const amountToMove = nextSlide.style.left; //how far the element must move
+
+    // console.log(currentSlide) ;
+    track.style.transform = 'translateX(" + amountToMove + ")';
+})
 // click nav dots change to relevant slide
 
-
-// console.log(slideSize);http://127.0.0.1:3000/images/luna.png

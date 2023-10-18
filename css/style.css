@@ -105,7 +105,7 @@ p {
 }
 
 .carousel {
-    position: static;
+    position: relative;
     padding-top: 30vh;
     padding-bottom: 15vh;
     height: 100vh;
@@ -120,19 +120,17 @@ p {
     border-radius: 1vw 1vw 0 0;
     padding-right: 5vw;
     object-fit: cover;
-    background: transparent;
 
 }
 
 .carousel_track-container {
-    background-color: aquamarine;
     height: 100%;
     position: relative;
-    background: transparent;
+
 }
 
 .carousel_track {
-
+    background-color: aquamarine;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -148,25 +146,28 @@ p {
 
 .carousel_button {
     position: absolute;
-    background-color: chartreuse;
-    /* top: 50%;
-    transform: translateY(-50%); */
+    /* background-color: chartreuse; */
+    height: 200px;
+    top: 50%;
+    transform: translateY(-50%);
     border: 0;
-    background: transparent;
     cursor: pointer;
 }
 
 .carousel_button img {
+    /* color: antiquewhite; */
+    background: transparent;
+    filter: invert(70%);
     width: 5vw;
 
 }
 
 .carousel_button--left {
-    left: -10vw;
+    left: -5vw;
 }
 
 .carousel_button--right {
-    right: -10vw;
+    right: -5vw;
 }
 
 .carousel_nav {
