@@ -99,8 +99,8 @@ nav,a:not(:hover) {
 }
 
 
-.blurb.p {
-    font-size: 1.5vw;
+.blurb, p {
+    font-size: 1.8vw;
 }
 
 .blurb {
@@ -211,7 +211,7 @@ nav,a:not(:hover) {
     height: 1vw;
     background: rgba(240, 128, 128, 0.3);
     margin: 0 1.5vw;
-
+    cursor: pointer;
 }
 
 .carousel_indicator.current-slide {
@@ -279,10 +279,15 @@ footer {
 .aboutMeImg {
     width: 30vw;
     transition: 1s;
+    margin-bottom: 4vw;
 }
 
-.blurb {
-    padding-top: 6vw;
+/* .blurb {
+    padding-top: 3vw;
+} */
+
+.blurb, p {
+    font-size: 2vw;
 }
 
 }

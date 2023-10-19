@@ -66,13 +66,19 @@ nextButton.addEventListener('click', function(e) {
 dotsNav.addEventListener('click', function(e){    //what indicator has been clicked
     const targetDot = e.target.closest('button');
 
-    if(!targetDot) return;
+    if(targetDot && targetDot.classList.contains('carousel_indicator')){
+        const currentSlide = track.querySelector('.current-slide');
+        const currentDot = dotsNav.querySelector('.current-slide');
+        const targetIndex = dots.findIndex(function(dot){return dot === targetDot});
+        const targetSlide = slides[targetIndex];
 
-const currentSlide = track.querySelector('.current-slide');
-const currentDot = dotsNav.querySelector('.current-slide');
-const targetIndex = dots.findIndex(function(dot){
-dot === targetDot
-});
+        moveToSlide(track, currentSlide, targetSlide);
 
-console.log(targetIndex)
-})
+        currentDot.classList.remove('current-slide')
+        targetDot.classList.add('current-slide')
+
+    }})
+
+
+
+
