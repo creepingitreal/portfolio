@@ -23,9 +23,9 @@ fetch('/data.json').then(function(response) {
 
         <br /> <h3>${project.title}</h3>
 
-        <br /> <img src="${project.image}" class="slider-size />
+        <br /> <img src="${project.image}" class="slider-size" />
         
-        <br /> <p>${project.description}</p>
+        <br /> <p class="is-hidden">${project.description}</p>
         
         </li> `;
 
