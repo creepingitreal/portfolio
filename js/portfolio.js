@@ -66,8 +66,13 @@ nextButton.addEventListener('click', function(e) {
 dotsNav.addEventListener('click', function(e){    //what indicator has been clicked
     const targetDot = e.target.closest('button');
 
-    console.log(targetDot)
+    if(!targetDot) return;
 
+const currentSlide = track.querySelector('.current-slide');
+const currentDot = dotsNav.querySelector('.current-slide');
+const targetIndex = dots.findIndex(function(dot){
+dot === targetDot
+});
 
-
+console.log(targetIndex)
 })
