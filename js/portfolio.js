@@ -38,12 +38,24 @@ slides.forEach(setSlidePosition) //used variable function here
     } //Back to line nextButton
 
 
+    const updateDots = function(currentDot, targetDot){
+        currentDot.classList.remove('current-slide')
+        targetDot.classList.add('current-slide')
+    }               // created a new variable to contain the change in dots so that we can 
+                    // apply it to all the js functions that move the slides
+
+
+
 // click left, move                 //copied function from click right
 prevButton.addEventListener('click', function(){
     const currentSlide = track.querySelector('.current-slide');
     const prevSlide = currentSlide.previousElementSibling;  
     
+    const currentDot = dotsNav.querySelector('.current-slide')
+    const prevDot = currentDot.previousElementSibling
+
     moveToSlide(track, currentSlide, prevSlide)
+    updateDots(currentDot, prevDot)
 })
 
 
@@ -52,11 +64,17 @@ nextButton.addEventListener('click', function(e) {
     const currentSlide = track.querySelector('.current-slide');
     const nextSlide = currentSlide.nextElementSibling;  // move to next slide
     const amountToMove = nextSlide.style.left; //how far the element must move
+    
+    const currentDot = dotsNav.querySelector('.current-slide')
+    const nextDot = currentDot.nextElementSibling
 
     // track.style.transform = 'translateX(-' + amountToMove + ')';
     // currentSlide.classList.remove('current-slide')
     // nextSlide.classList.add('current-slide')
     moveToSlide(track, currentSlide, nextSlide)
+    updateDots(currentDot, nextDot) // update dots applied here
+
+
 })
 
                 // see line 30
@@ -73,9 +91,8 @@ dotsNav.addEventListener('click', function(e){    //what indicator has been clic
         const targetSlide = slides[targetIndex];
 
         moveToSlide(track, currentSlide, targetSlide);
+        updateDots(currentDot, targetDot)
 
-        currentDot.classList.remove('current-slide')
-        targetDot.classList.add('current-slide')
 
     }})
 
