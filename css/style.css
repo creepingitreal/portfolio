@@ -4,7 +4,6 @@
     font-family: 'Jetbrains', monospace;
     color: antiquewhite;
     background-color: #060709;
-
 } 
 
 html, body {
@@ -32,6 +31,7 @@ nav {
 
 
 nav, a {
+    /* font-family: 'Gabarito', sans-serif; */
     font-weight: 500;
     text-decoration: none;
     background-color: transparent;
@@ -219,15 +219,65 @@ background-color: rgba(240, 128, 128, 0.8);
 
 } 
 
+.close-button {
+    cursor: pointer;
+}
+
 .is-hidden {
     display: none;
 }
 
+.slider-size {
+    display:flex;
+    justify-content: center;
+    height: 100%;
+
+}
+
+/* .overlay {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1c1f;
+} */
+
+.callMe {
+    display: flex;
+    flex-direction: column;
+}
+
+.callMeMaybe {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    color: rgb(72, 108, 65);
+    font-size: 1.5vw;
+    font-weight: 600;
+    padding: 1.4vh;
+    border-radius: .8vw;
+    cursor: pointer;
+
+}
+
+.callMeMaybe:hover {
+    background-color: rgba(74, 102, 60, 0.8);
+    color: antiquewhite;
+    transition: all 0.25s;
+    
+}
+
 form {
+    background-color: #1a1c1f;
+    position: fixed;
+    border-radius: 10px;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    overflow: auto;
     font-size: 2.2vw;
-    padding-top: 15vh;
-    padding-left: 10%;
-    width: 75vw;
+    padding: 2%;
+    box-shadow: .2vw .2vw 80vw rgba(148, 152, 178, 0.25);
+    border: solid 0.3vw rgb(72, 108, 65, 0.4);
 }
 
 .contactTitle {
@@ -238,13 +288,21 @@ form {
 
 input, textarea {
     border: none;
-    margin-top: 3px;
-    margin-bottom: 10px;
-    padding: 0.8vw 0.4vw;
+    top: 15%;
+    /* margin: auto; */
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    padding: 0.8vw 0.8vw;
     background-color: rgba(255, 255, 255, 0.183);
     border-radius: 0.5vw;
-    width: 100%;
+    width: 90%;
 }
+
+input, textarea, ::placeholder {
+    font-size: 1.3vw;
+
+}
+
 
 #fullName #email #enquiry {
     padding-top: 10px;
@@ -252,14 +310,36 @@ input, textarea {
 
 button.submit {
     margin-top: 1vh;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 1vh;
-    font-size: 16px;
+    padding: 1vh 1.4vw;
+    border-radius: .8vh;
+    font-size: 2vw;
     font-weight: 600;
-    background-color: white;
-    color: rgba(168, 22, 198, 0.83);
+    background-color: #1a1c1f;
+    color: rgba(51, 115, 2, 0.83);
+    cursor: pointer;
+}
 
+.close-button{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    border: none;
+}
+
+button.submit:hover{
+    background-color: rgba(74, 102, 60, 0.8);
+    color: antiquewhite;
+    transition: all 0.25s;
+}
+.contactTitle, .fullName, .email, .enquiry {
+    background-color: #1a1c1f;
+}
+
+.submit-error {
+    font-size: 1.3vw;
+    background-color: #1a1c1f;
+    color: rgb(167, 67, 67);
+    padding-bottom: 2vh;
 }
 
 footer {

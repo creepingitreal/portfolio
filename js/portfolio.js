@@ -1,5 +1,5 @@
 const track = document.querySelector('.carousel_track');
-const slides = Array.from(track.children);
+let slides = Array.from(track.children);
 const nextButton = document.querySelector('.carousel_button--right');
 const prevButton = document.querySelector('.carousel_button--left');
 const dotsNav = document.querySelector('.carousel_nav');
@@ -9,23 +9,38 @@ const slideWidth = slides[0].getBoundingClientRect().width;
 // const slideWidth = slideSize.width;
 
 // adding .json here (19/11/23)
-fetch(data.json).then(function(response) {
+
+fetch('/data.json').then(function(response) {
     return response.json()
 }).then(function(portfolioData){
-    const displayTarget = slides
+    const displayTarget = track
 
-    let = output ''
+    let output = ''
 
-    portfolioData.items.forEach(function(project){
-        output += '<li class='project'>'
-        output += '<h3> + project.title + </h3>'
-        output += '<img src="' + project.image + '" />'
-        output += '</li>'
+    portfolioData.forEach(function(project){
+        output += `
+        <li class="carousel_slide">
 
-        displayTarget.innerHTML = output
+        <br /> <h3>${project.title}</h3>
+
+        <br /> <img src="${project.image}" class="slider-size />
+        
+        <br /> <p>${project.description}</p>
+        
+        </li> `;
 
     })
 
+    displayTarget.innerHTML = output
+ 
+    const firstSlide = track.querySelector('.carousel_slide')
+    firstSlide.classList.add('current-slide')    
+
+    slides = Array.from(track.children)
+
+    slides.forEach(setSlidePosition)    
+
+    console.log(output)
 })
 
 
@@ -36,9 +51,14 @@ fetch(data.json).then(function(response) {
 // slides[1].style.left = slideWidth + 'px';
 // slides[2].style.left = slideWidth * 2 + 'px';
 
+
+
 const setSlidePosition = (function(slide, index) {
     slide.style.left = slideWidth * index +'px'
 });
+
+
+
 
 // slides.forEach(function (slide, index) {
 //     slide.style.left = slideWidth * index + 'px';
@@ -104,13 +124,19 @@ prevButton.addEventListener('click', function(){
 // click right, move
 nextButton.addEventListener('click', function(e) {
     const currentSlide = track.querySelector('.current-slide');
+
+    console.log(currentSlide)
+
     const nextSlide = currentSlide.nextElementSibling;  // move to next slide
     const amountToMove = nextSlide.style.left; //how far the element must move
     
+
     const currentDot = dotsNav.querySelector('.current-slide')
     const nextDot = currentDot.nextElementSibling
 
     const nextIndex = slides.findIndex(slide => slide === nextSlide)
+
+    console.log(nextIndex)
 
     // track.style.transform = 'translateX(-' + amountToMove + ')';
     // currentSlide.classList.remove('current-slide')
@@ -142,4 +168,20 @@ dotsNav.addEventListener('click', function(e){    //what indicator has been clic
 
 
 
+// Contact Me
+// 
+const contactMe = document.querySelector('.callMeMaybe')
+const enquiryForm = document.querySelector('.overlay')
 
+contactMe.addEventListener('click', function() {
+    enquiryForm.classList.remove('is-hidden')
+
+    console.log (contactMe)
+})
+
+const closeBox = document.querySelector('.close-button')
+
+closeBox.addEventListener('click', function(){
+    enquiryForm.classList.add('is-hidden')
+
+})
