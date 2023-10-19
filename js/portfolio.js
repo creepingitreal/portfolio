@@ -8,6 +8,26 @@ const dots = Array.from(dotsNav.children);
 const slideWidth = slides[0].getBoundingClientRect().width;
 // const slideWidth = slideSize.width;
 
+// adding .json here (19/11/23)
+fetch(data.json).then(function(response) {
+    return response.json()
+}).then(function(portfolioData){
+    const displayTarget = slides
+
+    let = output ''
+
+    portfolioData.items.forEach(function(project){
+        output += '<li class='project'>'
+        output += '<h3> + project.title + </h3>'
+        output += '<img src="' + project.image + '" />'
+        output += '</li>'
+
+        displayTarget.innerHTML = output
+
+    })
+
+})
+
 
 
 // arrange slides next to each other - currently on top of each other
