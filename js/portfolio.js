@@ -21,11 +21,11 @@ fetch('/data.json').then(function(response) {
         output += `
         <li class="carousel_slide">
 
-        <br /> <h3>${project.title}</h3>
+        <h3 class"in-carousel">${project.title}</h3>
 
-        <br /> <img src="${project.image}" class="slider-size" />
-        
-        <br /> <p class="is-hidden">${project.description}</p>
+        <img src="${project.image}" class="slider-size"/>
+                
+        <p class="is-hidden">${project.description}</p>
         
         </li> `;
 
@@ -185,3 +185,5 @@ closeBox.addEventListener('click', function(){
     enquiryForm.classList.add('is-hidden')
 
 })
+
+console.log

@@ -1,7 +1,7 @@
 * { margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Jetbrains', monospace;
+    font-family: ''Jetbrains', monospace;';
     color: antiquewhite;
     background-color: #060709;
 } 
@@ -31,7 +31,7 @@ nav {
 
 
 nav, a {
-    /* font-family: 'Gabarito', sans-serif; */
+    /* font-family: 'Inter', sans-serif; */
     font-weight: 500;
     text-decoration: none;
     background-color: transparent;
@@ -40,6 +40,7 @@ nav, a {
     top: 3%;
     left: 1%;
     right:1%;    
+
 }
 
 .logo-home {
@@ -56,6 +57,9 @@ nav,a:not(:hover) {
     transition: all .5s ease;
 }
 
+html, a {
+    scroll-behavior: smooth;
+  }
 
 .logo-sm {
     font-size: 3vw;
@@ -81,7 +85,7 @@ nav,a:not(:hover) {
 
 .intro {
     height: 100vh;
-    padding: 30% 10%;
+    padding: 30vw 10%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -93,14 +97,14 @@ nav,a:not(:hover) {
     align-items: center;
     justify-content: center;
     margin: 5%;
-    padding: 30vh 10vw 0 10vh;
+    padding: 20vh 10vw 0 10vh;
     max-width: 95vw;
 
 }
 
 
 .blurb, p {
-    font-size: 1.8vw;
+    font-size: 1.6vw;
 }
 
 .blurb {
@@ -114,7 +118,7 @@ nav,a:not(:hover) {
 }
 
 .selectedWork {
-    height: 100vh;
+    max-height: 100vh;
     background-color: transparent;
 }
 
@@ -129,13 +133,35 @@ nav,a:not(:hover) {
 }
 
 .carousel_img {
-    width: 100%;
-    height: 100%;
     border-radius: 2vw;
-    padding: 0 5vw;
-    object-fit: cover;
+    padding: 0 5vw; 
+    
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    background-color: transparent;
+    max-height: 100%;
+    width: 100%;
 
 }
+
+.carousel_slide, h3{
+    padding-left: 5vw;
+    padding-bottom: 2vh;
+}
+
+
+.slider-size {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2vw;
+    /* background-color: chartreuse; */
+    }
+
+
 
 .carousel_track-container {
     height: 100%;
@@ -148,26 +174,16 @@ nav,a:not(:hover) {
 
 .carousel_track {
     position: relative;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+    max-height: 100%;
+    width:auto;
     list-style: none;
-    background-color: transparent;
-    transition: transform 250ms ease-in;
+    transition: 250ms ease-in;
 }
 
-.carousel_slide {
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: transparent;
-}
+
 
 .carousel_button {
     position: absolute;
-    /* background-color: chartreuse; */
-    height: 200px;
     top: 50%;
     transform: translateY(-50%);
     border: 0;
@@ -176,10 +192,10 @@ nav,a:not(:hover) {
 }
 
 .carousel_button img {
-    color: antiquewhite;
+    color: #faead6;
     background: transparent;
-    filter: invert(70%);
-    width: 5vw;
+    filter: invert(80%);
+    width: 2vw;
 
 }
 
@@ -200,9 +216,6 @@ nav,a:not(:hover) {
 
 }
 
-.carousel.current-slide {
-    background-color: transparent;
-}
 
 .carousel_indicator {
     border: 0;
@@ -227,11 +240,6 @@ background-color: rgba(240, 128, 128, 0.8);
     display: none;
 }
 
-.slider-size {
-    margin: 0 25%;
-    height: 100%;
-
-}
 
 /* .overlay {
     z-index: 1;
@@ -246,8 +254,8 @@ background-color: rgba(240, 128, 128, 0.8);
 }
 
 .callMeMaybe {
-    margin-top: 4vw;
-    margin-bottom: 4vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
     color: rgb(72, 108, 65);
     font-size: 1.5vw;
     font-weight: 600;
@@ -346,12 +354,12 @@ footer {
 }
 
 @media screen and (max-width: 850px) {
- a.logo-home {
+ .logo-name {
    visibility: hidden;
  }
- a.logo-sm {
+ .logo-sm {
    display: block;
-   transition: 1s;
+
  }
 
 .about {
@@ -365,13 +373,20 @@ footer {
     margin-bottom: 4vw;
 }
 
-/* .blurb {
-    padding-top: 3vw;
-} */
 
 .blurb, p {
     font-size: 2vw;
 }
+/* 
+li, img {
+    max-height: 100%;
+    width: auto;
+    } */
 
+}
+@media screen and(min-width:800px){
+    .carousel_image{
+        po
+    }
 }
 
